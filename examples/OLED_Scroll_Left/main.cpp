@@ -25,7 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "OLED_Display_128X64/SeeedOLED.h"
+#include "ST32_OLED_Display_128X64/SeeedOLED.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
