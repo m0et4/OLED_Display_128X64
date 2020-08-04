@@ -27,12 +27,6 @@
 
 // SeeedOLED Instruction set addresses
 
-//#if defined(ARDUINO) && ARDUINO >= 100
-//    #include "Arduino.h"
-//#else
-//    #include <WProgram.h>
-//    #include "Wire.h"
-//#endif
 #include "stm32f4xx_hal.h"
 #include "stm32f4xx_hal_i2c.h"
 
@@ -43,7 +37,7 @@
 #define HORIZONTAL_MODE                 02
 
 
-#define SeeedOLED_Address               (0x3c << 1)
+#define SeeedOLED_Address               (0x3c << 1) // Shift address by 1 bit when using HAL library
 #define SeeedOLED_Command_Mode          0x80
 #define SeeedOLED_Data_Mode             0x40
 #define SeeedOLED_Display_Off_Cmd       0xAE

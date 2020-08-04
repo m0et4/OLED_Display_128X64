@@ -24,7 +24,7 @@
 
 #include "SeeedOLED.h"
 #include "stm32f4xx_hal_i2c.h"
-#include "stm32f4xx_hal_flash.h"
+
 // 8x8 Font ASCII 32 - 127 Implemented
 // Users can modify this to support more characters(glyphs)
 // BasicFont is placed in code memory.
@@ -140,15 +140,6 @@ void SeeedOLED::init(I2C_HandleTypeDef* hi2c) {
 
 void SeeedOLED::sendCommand(unsigned char command) {
     HAL_I2C_Mem_Write(&i2c_ht, SeeedOLED_Address, SeeedOLED_Command_Mode, 1, &command, 1, 200);
-//    Wire.beginTransmission(SeeedOLED_Address); // begin I2C communication
-//    #if defined(ARDUINO) && ARDUINO >= 100
-//    Wire.write(SeeedOLED_Command_Mode);        // Set OLED Command mode
-//    Wire.write(command);
-//    #else
-//    Wire.send(SeeedOLED_Command_Mode);         // Set OLED Command mode
-//    Wire.send(command);
-//    #endif
-//    Wire.endTransmission();                // End I2C communication
 }
 
 void SeeedOLED::setBrightness(unsigned char Brightness) {
@@ -193,15 +184,7 @@ void SeeedOLED::clearDisplay() {
 
 void SeeedOLED::sendData(unsigned char Data) {
     HAL_I2C_Mem_Write(&i2c_ht, SeeedOLED_Address, SeeedOLED_Data_Mode, 1, &Data, 1, 200);
-//    Wire.beginTransmission(SeeedOLED_Address); // begin I2C transmission
-//    #if defined(ARDUINO) && ARDUINO >= 100
-//    Wire.write(SeeedOLED_Data_Mode);            // data mode
-//    Wire.write(Data);
-//    #else
-//    Wire.send(SeeedOLED_Data_Mode);            // data mode
-//    Wire.send(Data);
-//    #endif
-//    Wire.endTransmission();                    // stop I2C transmission
+
 }
 
 void SeeedOLED::putChar(unsigned char C) {
