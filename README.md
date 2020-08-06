@@ -14,7 +14,7 @@ Repository is forked from [Seeed-Studio/OLED_Display_128X64](https://github.com/
 include this library
 
 ```C++
-+ #include "STM32_OLED_Display_128X64/SeeedOLED.h">
++ #include "STM32_OLED_Display_128X64/SeeedOLED.h"
 ```
 
 and pls watch Example  
